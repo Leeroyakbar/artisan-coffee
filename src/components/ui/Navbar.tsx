@@ -46,14 +46,14 @@ const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-3 lg:gap-4">
-            <Search size={20} className="text-coffee-dark cursor-pointer hidden sm:block hover:text-coffee-mocha transition-colors" />
+            <Search size={20} className="text-coffee-dark cursor-pointer hover:text-coffee-mocha transition-colors" />
 
             <div className="relative cursor-pointer p-2" onClick={() => setIsCartOpen(true)}>
               <ShoppingBag size={20} className="text-coffee-dark hover:text-coffee-mocha transition-colors" />
               {totalItems > 0 && <span className="absolute top-0 right-0 bg-coffee-mocha text-coffee-latte text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">{totalItems}</span>}
             </div>
 
-            <a href="#Menu" className="bg-coffeehidden sm:flex px-5 py-2.5 bg-coffee-dark text-sm font-medium rounded-full hover:bg-coffee-mocha transition-colors text-coffee-beige">
+            <a href="#Menu" className="hidden sm:inline-flex px-5 py-2.5 bg-coffee-dark text-sm font-medium rounded-full hover:bg-coffee-mocha transition-colors text-coffee-beige">
               Order Coffee
             </a>
           </div>
