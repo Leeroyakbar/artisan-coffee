@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@theme {
+  /* Coffee-inspired Color Palette */
+  --color-coffee-dark: #3b2f2f; /* Primary: Dark coffee brown */
+  --color-coffee-mocha: #6f4e37; /* Secondary: Warm mocha */
+  --color-coffee-latte: #f5e6d3; /* Accent: Cream latte */
+  --color-coffee-beige: #faf7f2; /* Background: Soft beige */
+
+  /* WhatsApp Green for Checkout */
+  --color-whatsapp: #25d366;
+
+  /* Typography Setup */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-coffee-beige text-coffee-dark antialiased;
+    font-family: var(--font-body);
+  }
+
+  /* Semantic Heading Strategy for SEO */
+  h1 {
+    @apply font-heading text-5xl md:text-7xl leading-tight font-bold;
+  }
+
+  h2 {
+    @apply font-heading text-3xl md:text-5xl leading-snug;
+  }
+
+  h3 {
+    @apply font-heading text-xl md:text-2xl;
+  }
+
+  .font-serif {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  /* Premium Layout Spacing */
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-32;
+  }
+
+  /* Buttons - Inspired by High-end Tech Brands */
+  .btn-primary {
+    @apply bg-coffee-dark text-coffee-latte px-8 py-3.5 rounded-full text-sm font-medium 
+           hover:bg-coffee-mocha transition-all duration-300 shadow-md active:scale-95 
+           flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border border-coffee-dark text-coffee-dark px-8 py-3.5 rounded-full text-sm font-medium 
+           hover:bg-coffee-dark hover:text-coffee-latte transition-all duration-300;
+  }
+
+  .btn-whatsapp {
+    @apply bg-whatsapp text-white px-6 py-4 rounded-xl font-bold text-center
+           hover:brightness-110 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg;
+  }
+
+  /* Navbar Link Aesthetic */
+  .nav-link {
+    @apply text-sm font-medium text-coffee-dark/80 hover:text-coffee-dark 
+           relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 
+           after:w-0 after:h-[1px] after:bg-coffee-dark after:transition-all hover:after:w-full;
+  }
+
+  /* Product Card Premium Styles */
+  .product-card {
+    @apply bg-white rounded-2xl p-4 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+  }
+
+  .roast-level-dot {
+    @apply w-2 h-2 rounded-full bg-coffee-mocha/30;
+  }
+
+  .roast-level-dot-active {
+    @apply bg-coffee-mocha;
+  }
+
+  /* Cart Layout Components */
+  .mini-cart-item {
+    @apply flex gap-4 p-4 bg-white/50 rounded-xl border border-coffee-dark/5;
+  }
+}
+
+/* Custom Utilities for Artisan Feel */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility glass-effect {
+  @apply backdrop-blur-md bg-coffee-beige/80;
+}
