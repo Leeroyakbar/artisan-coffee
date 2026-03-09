@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="sticky top-0 z-40 bg-coffee-beige border-b border-coffee-dark/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
           {/* Mobile Menu Toggle */}
           <button className="lg:hidden p-2 text-coffee-dark hover:text-coffee-mocha transition-colors" onClick={() => setMobileOpen(true)}>
             <Menu size={24} />
@@ -31,7 +31,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2">
             <a href="#home" className="flex items-center gap-2">
               <Coffee className="w-7 h-7 text-secondary" />
-              <span className="font-serif text-xl lg:text-2xl text-coffee-dark">Artisan Coffee</span>
+              <span className="font-serif text-xl lg:text-2xl font-bold text-coffee-dark">Artisan Coffee</span>
             </a>
           </div>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-3 lg:gap-6">
+          <div className="flex items-center gap-3 lg:gap-4">
             <Search size={20} className="text-coffee-dark cursor-pointer hidden sm:block hover:text-coffee-mocha transition-colors" />
 
             <div className="relative cursor-pointer p-2" onClick={() => setIsCartOpen(true)}>
@@ -53,7 +53,9 @@ const Navbar = () => {
               {totalItems > 0 && <span className="absolute top-0 right-0 bg-coffee-mocha text-coffee-latte text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">{totalItems}</span>}
             </div>
 
-            <button className="btn-primary hidden sm:flex">Order Coffee</button>
+            <a href="#Menu" className="bg-coffeehidden sm:flex px-5 py-2.5 bg-coffee-dark text-sm font-medium rounded-full hover:bg-coffee-mocha transition-colors text-coffee-beige">
+              Order Coffee
+            </a>
           </div>
         </div>
       </nav>

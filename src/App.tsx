@@ -1,4 +1,5 @@
 import { CartModal } from "./components/layout/CartModal"
+import HeroSection from "./components/ui/HeroSection"
 import Navbar from "./components/ui/Navbar"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Navbar />
       <CartModal />
+      <HeroSection />
     </>
   )
 }
