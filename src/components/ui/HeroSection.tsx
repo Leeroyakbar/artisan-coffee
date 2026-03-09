@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { easeOut, motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { useCart } from "../../hooks/useCart"
 import { toast } from "sonner"
@@ -26,7 +26,7 @@ const HeroSection = () => {
     <section id="home" className="section-container min-h-[80vh] flex items-center">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         {/* Left Content */}
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }}>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: easeOut }}>
           <span className="text-coffee-mocha font-medium tracking-widest uppercase text-sm">Artisan Coffee Roasters</span>
           <h1 className="mt-4 mb-6">
             Brew Moments <br />

@@ -1,6 +1,7 @@
 import { CartModal } from "./components/layout/CartModal"
 import HeroSection from "./components/ui/HeroSection"
 import Navbar from "./components/ui/Navbar"
+import SignatureCoffee from "./components/ui/SignatureCoffee"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <CartModal />
       <HeroSection />
+      <SignatureCoffee />
     </>
   )
 }
