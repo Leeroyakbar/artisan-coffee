@@ -98,6 +98,6 @@
   @apply backdrop-blur-md bg-coffee-beige/80;
 }
 
-* {
-  
+html {
+  scroll-behavior: smooth;
 }
