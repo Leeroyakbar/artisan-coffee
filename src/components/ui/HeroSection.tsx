@@ -2,9 +2,11 @@ import { easeOut, motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { useCart } from "../../hooks/useCart"
 import { toast } from "sonner"
+import { useNavigate } from "react-router-dom"
 
 const HeroSection = () => {
   const { addToCart } = useCart()
+  const navigate = useNavigate()
   const featuredCoffee = {
     id: 1,
     name: "House Blend",
@@ -22,6 +24,20 @@ const HeroSection = () => {
     })
   }
 
+  const handleNavClick = (sectionId: string) => {
+    // Jika kita tidak di halaman utama, pindah ke "/"
+    if (location.pathname !== "/") {
+      navigate("/")
+      // Beri sedikit delay agar komponen selesai di-render di home
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      // Jika sudah di halaman utama, langsung scroll
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <section id="home" className="section-container min-h-[80vh] flex items-center">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -35,7 +51,7 @@ const HeroSection = () => {
           <p className="text-coffee-dark/70 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">Discover handcrafted coffee made from carefully selected beans, roasted to perfection for a rich and unforgettable taste.</p>
 
           <div className="flex flex-wrap gap-4">
-            <button className="btn-primary">
+            <button onClick={() => handleNavClick("menu")} className="btn-primary">
               Explore Coffee <ArrowRight size={18} />
             </button>
             <button className="btn-secondary">Order Now</button>

@@ -9,11 +9,11 @@ const stats = [
 
 const StorySection = () => {
   return (
-    <section id="story" className="section-container">
+    <section id="story" className="section-container overflow-hidden">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         {/* Left: Roasting Image with Animation */}
-        <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="relative">
-          <div className="rounded-[2.5rem] overflow-hidden h-[500px] shadow-2xl">
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="relative">
+          <div className="rounded-[2.5rem] overflow-hidden h-125 shadow-2xl">
             <img src="/coffee-roasting.jpg" alt="Coffee Roasting Process" className="w-full h-full object-cover" />
           </div>
           {/* Decorative Card */}
@@ -24,7 +24,7 @@ const StorySection = () => {
         </motion.div>
 
         {/* Right: Story Narrative */}
-        <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
           <span className="text-coffee-mocha font-medium tracking-widest uppercase text-sm">Our Story</span>
           <h2 className="mt-4 mb-8">From Bean to Cup</h2>
 

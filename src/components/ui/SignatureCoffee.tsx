@@ -16,7 +16,7 @@ const SignatureCoffee = () => {
 
   return (
     <section id="featured" className="section-container">
-      <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: easeOut }} className="text-center mb-16">
+      <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: easeOut }} className="text-center mb-16">
         <span className="text-coffee-mocha tracking-widest uppercase text-md">Premium Selection</span>
         <h2 className="mt-4 font-bold">Our Signature Coffee</h2>
         <p className="text-coffee-dark/60 mt-2">Each blend tells a story of origin, craft, and passion.</p>

@@ -19,20 +19,6 @@ const ContactSection = () => {
             <ContactItem icon={<MessageCircle />} title="WhatsApp" text="+62822 7336 6718" />
             <ContactItem icon={<Mail />} title="Email" text="info@artisancoffee.com" />
           </motion.div>
-
-          {/* Embedded Map */}
-          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }} className="h-[400px] w-full rounded-2xl overflow-hidden shadow-lg border border-coffee-mocha/20">
-            {/* Ganti src dengan link Google Maps Embed kamu */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249.33687318930046!2d99.56262375498851!3d0.8395836909829889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1773149470887!5m2!1sid!2sid"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </motion.div>
         </div>
       </div>
     </section>

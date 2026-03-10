@@ -4,7 +4,16 @@ import { useCart } from "../../hooks/useCart"
 
 export const CartModal = () => {
   const { items, removeFromCart, updateQuantity, clearCart, totalPrice, isCartOpen, setIsCartOpen } = useCart()
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "6282273366718"
 
+    // Membuat daftar item dengan format list/bullet point
+    const itemsList = items.map((item) => `• ${item.quantity}x ${item.name} (${item.price})`).join("\n")
+
+    const message = `Halo Admin, saya ingin memesan:\n\n${itemsList}\n\n*Total Harga: $${totalPrice}*\n\nTerima Kasih.`
+
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
+  }
   return (
     <AnimatePresence>
       {isCartOpen && (
@@ -66,7 +75,9 @@ export const CartModal = () => {
                     <span className="font-serif">Total</span>
                     <span className="font-bold text-coffee-dark">${totalPrice.toFixed(2)}</span>
                   </div>
-                  <button className="w-full bg-coffee-dark text-coffee-latte py-4 rounded-full font-medium hover:bg-coffee-mocha transition shadow-lg">Order via WhatsApp</button>
+                  <button onClick={handleWhatsAppClick} className="w-full bg-coffee-dark text-coffee-latte py-4 rounded-full font-medium hover:bg-coffee-mocha transition shadow-lg">
+                    Order via WhatsApp
+                  </button>
                   <button onClick={clearCart} className="w-full mt-4 text-coffee-mocha underline text-sm hover:text-coffee-dark">
                     Clear Cart
                   </button>
