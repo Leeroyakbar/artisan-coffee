@@ -97,3 +97,7 @@
 @utility glass-effect {
   @apply backdrop-blur-md bg-coffee-beige/80;
 }
+
+* {
+  
+}

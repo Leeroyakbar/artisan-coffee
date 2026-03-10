@@ -30,7 +30,7 @@ const HeroSection = () => {
           <span className="text-coffee-mocha font-medium tracking-widest uppercase text-sm">Artisan Coffee Roasters</span>
           <h1 className="mt-4 mb-6">
             Brew Moments <br />
-            That Matter
+            <span className="text-coffee-mocha">That Matter</span>
           </h1>
           <p className="text-coffee-dark/70 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">Discover handcrafted coffee made from carefully selected beans, roasted to perfection for a rich and unforgettable taste.</p>
 
