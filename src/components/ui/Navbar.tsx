@@ -2,21 +2,39 @@ import { Search, ShoppingBag, X, Menu, Coffee } from "lucide-react"
 import { useCart } from "../../hooks/useCart"
 import { AnimatePresence, motion } from "framer-motion"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Our Signature", href: "#featured" },
-  { label: "Menu", href: "#menu" },
-  { label: "About Us", href: "#story" },
-  { label: "Experience", href: "#experience" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", id: "home" },
+  { label: "Our Signature", id: "featured" },
+  { label: "Menu", id: "menu" },
+  { label: "About Us", id: "story" },
+  { label: "Experience", id: "experience" },
+  { label: "Blog", id: "blog" },
+  { label: "Contact", id: "contact" },
 ]
 
 const Navbar = () => {
   const { items, setIsCartOpen } = useCart()
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const navigate = useNavigate()
+
+  const handleNavClick = (sectionId: string) => {
+    setMobileOpen(false) // Tutup mobile menu jika terbuka
+
+    // Jika kita tidak di halaman utama, pindah ke "/"
+    if (location.pathname !== "/") {
+      navigate("/")
+      // Beri sedikit delay agar komponen selesai di-render di home
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+      }, 100)
+    } else {
+      // Jika sudah di halaman utama, langsung scroll
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" })
+    }
+  }
 
   return (
     <>
@@ -29,18 +47,18 @@ const Navbar = () => {
 
           {/* Logo Section */}
           <div className="flex items-center gap-2">
-            <a href="#home" className="flex items-center gap-2">
+            <button onClick={() => handleNavClick("/")} className="flex items-center gap-2">
               <Coffee className="w-7 h-7 text-secondary" />
               <span className="font-serif text-xl lg:text-2xl font-bold text-coffee-dark">Artisan Coffee</span>
-            </a>
+            </button>
           </div>
 
           {/* Desktop Menu Links - Menggunakan .nav-link dari index.css */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link, index) => (
-              <a key={index} href={link.href} className="nav-link">
+              <button key={index} onClick={() => handleNavClick(link.id)} className="nav-link">
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -53,9 +71,9 @@ const Navbar = () => {
               {totalItems > 0 && <span className="absolute top-0 right-0 bg-coffee-mocha text-coffee-latte text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">{totalItems}</span>}
             </div>
 
-            <a href="#Menu" className="hidden sm:inline-flex px-5 py-2.5 bg-coffee-dark text-sm font-medium rounded-full hover:bg-coffee-mocha transition-colors text-coffee-beige">
+            <button onClick={() => handleNavClick("menu")} className="hidden sm:inline-flex px-5 py-2.5 bg-coffee-dark text-sm font-medium rounded-full hover:bg-coffee-mocha transition-colors text-coffee-beige">
               Order Coffee
-            </a>
+            </button>
           </div>
         </div>
       </nav>
@@ -82,12 +100,25 @@ const Navbar = () => {
 
               <div className="flex flex-col gap-6">
                 {navLinks.map((link) => (
-                  <a key={link.label} href={link.href} onClick={() => setMobileOpen(false)} className="text-lg font-medium text-coffee-dark hover:text-coffee-mocha transition-colors border-b border-coffee-dark/5 pb-2">
+                  <button
+                    key={link.label}
+                    onClick={() => {
+                      handleNavClick(link.id)
+                      setMobileOpen(false)
+                    }}
+                    className="text-lg font-medium text-coffee-dark hover:text-coffee-mocha transition-colors border-b border-coffee-dark/5 pb-2"
+                  >
                     {link.label}
-                  </a>
+                  </button>
                 ))}
 
-                <button onClick={() => setMobileOpen(false)} className="btn-primary w-full mt-4">
+                <button
+                  onClick={() => {
+                    handleNavClick("menu")
+                    setMobileOpen(false)
+                  }}
+                  className="btn-primary w-full mt-4"
+                >
                   Order Coffee
                 </button>
               </div>

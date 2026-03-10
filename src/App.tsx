@@ -1,34 +1,19 @@
-import { CartModal } from "./components/layout/CartModal"
-import BlogSection from "./components/ui/BlogSection"
-import ContactSection from "./components/ui/ContactSection"
-import CTASection from "./components/ui/CTASection"
-import ExperienceSection from "./components/ui/ExperienceSection"
-import Footer from "./components/ui/Footer"
-import GallerySection from "./components/ui/GallerySection"
-import HeroSection from "./components/ui/HeroSection"
-import MenuSection from "./components/ui/MenuSection"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Navbar from "./components/ui/Navbar"
-import SignatureCoffee from "./components/ui/SignatureCoffee"
-import StorySection from "./components/ui/StorySection"
-import TestimonialSection from "./components/ui/Testimonial"
+import Footer from "./components/ui/Footer"
+import HomePage from "./components/pages/HomePage"
+import { FAQPage } from "./components/pages/FAQPage"
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <CartModal />
-      <HeroSection />
-      <SignatureCoffee />
-      <StorySection />
-      <ExperienceSection />
-      <MenuSection />
-      <BlogSection />
-      <TestimonialSection />
-      <GallerySection />
-      <CTASection />
-      <ContactSection />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/faq" element={<FAQPage />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
