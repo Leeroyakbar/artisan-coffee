@@ -4,11 +4,11 @@ import { useCart } from "../../hooks/useCart"
 import { toast } from "sonner"
 
 const products = [
-  { id: 1, name: "House Blend Coffee Beans", price: 12, notes: ["Chocolate", "Caramel", "Nutty"], roast: 4, image: "/coffee-beans.jpg" },
-  { id: 2, name: "Single Origin Arabica", price: 16, notes: ["Fruity", "Floral", "Citrus"], roast: 2, image: "/coffee-beans.jpg" },
-  { id: 3, name: "Espresso Roast", price: 14, notes: ["Bold", "Smoky", "Dark Chocolate"], roast: 5, image: "/espresso.jpg" },
-  { id: 4, name: "Caffé Latte", price: 5, notes: ["Creamy", "Smooth"], roast: 3, image: "/latte-art.jpg" },
-  { id: 5, name: "Cold Brew Bottle", price: 7, notes: ["Refreshing", "Clean"], roast: 3, image: "/cold-brew.jpg" },
+  { id: 1, name: "House Blend Coffee Beans", price: 120000, notes: ["Chocolate", "Caramel", "Nutty"], roast: 4, image: "/coffee-beans.jpg" },
+  { id: 2, name: "Single Origin Arabica", price: 160000, notes: ["Fruity", "Floral", "Citrus"], roast: 2, image: "/coffee-beans.jpg" },
+  { id: 3, name: "Espresso Roast", price: 20000, notes: ["Bold", "Smoky", "Dark Chocolate"], roast: 5, image: "/espresso.jpg" },
+  { id: 4, name: "Caffé Latte", price: 230000, notes: ["Creamy", "Smooth"], roast: 3, image: "/latte-art.jpg" },
+  { id: 5, name: "Cold Brew Bottle", price: 18000, notes: ["Refreshing", "Clean"], roast: 3, image: "/cold-brew.jpg" },
 ]
 
 const SignatureCoffee = () => {
@@ -57,7 +57,7 @@ const SignatureCoffee = () => {
 
             {/* Action */}
             <div className="mt-auto flex items-center justify-between pt-4 border-t border-coffee-dark/5">
-              <span className="font-bold text-coffee-dark">${product.price}</span>
+              <span className="font-bold text-coffee-dark">Rp.{product.price}</span>
               <button
                 onClick={() => {
                   addToCart({ id: product.id, name: product.name, price: product.price, image: product.image })

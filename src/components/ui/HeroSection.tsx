@@ -74,7 +74,7 @@ const HeroSection = () => {
               <p className="text-xs text-coffee-dark/50 uppercase">Featured</p>
               <p className="font-bold text-coffee-dark">House Blend</p>
               <div className="flex justify-between items-center mt-1">
-                <span className="font-bold text-coffee-mocha">$12</span>
+                <span className="font-bold text-coffee-mocha pr-2">Rp. 120000</span>
                 <button onClick={() => handleAddToCart()} className="text-[10px] bg-coffee-dark text-white px-3 py-1 rounded-full">
                   Add
                 </button>

@@ -8,13 +8,13 @@ const categories = ["All", "Coffee Beans", "Hot Coffee", "Cold Coffee", "Manual 
 
 const products = [
   { id: 1, name: "House Blend Coffee Beans", category: "Coffee Beans", price: 120000, desc: "Our signature blend with notes of chocolate and caramel.", image: "/coffee-beans.jpg", bestSelling: true },
-  { id: 2, name: "Single Origin Arabica", category: "Coffee Beans", price: 100000, desc: "Premium Mandhailing Arabica with fruity and floral undertones.", image: "/coffee-beans.jpg", bestSelling: true },
+  { id: 2, name: "Single Origin Arabica", category: "Coffee Beans", price: 160000, desc: "Premium Mandhailing Arabica with fruity and floral undertones.", image: "/coffee-beans.jpg", bestSelling: true },
   { id: 3, name: "Espresso Roast", category: "Coffee Beans", price: 20000, desc: "Bold and intense dark roast for the perfect espresso.", image: "/espresso.jpg", bestSelling: true },
   { id: 4, name: "Caffè Latte", category: "Hot Coffee", price: 23000, desc: "Smooth espresso with steamed milk and a touch of foam.", image: "/latte-art.jpg", bestSelling: true },
   { id: 5, name: "Cappuccino", category: "Hot Coffee", price: 25000, desc: "Equal parts espresso, steamed milk, and velvety foam.", image: "/hero-coffee.jpg", bestSelling: true },
   { id: 6, name: "Americano", category: "Hot Coffee", price: 25000, desc: "Rich espresso diluted with hot water for a clean taste.", image: "/espresso.jpg", bestSelling: true },
-  { id: 7, name: "Cold Brew Bottle", category: "Cold Coffee", price: 25000, desc: "Smooth, low-acid cold brew steeped for 18 hours.", image: "/cold-brew.jpg", bestSelling: true },
-  { id: 8, name: "Vietnam Drip Coffee", category: "Manual Brew", price: 26000, desc: "Traditional Vietnamese phin drip with condensed milk.", image: "/vietnam-drip.jpg", bestSelling: true },
+  { id: 7, name: "Cold Brew Bottle", category: "Cold Coffee", price: 18000, desc: "Smooth, low-acid cold brew steeped for 18 hours.", image: "/cold-brew.jpg", bestSelling: true },
+  { id: 8, name: "Vietnam Drip Coffee", category: "Manual Brew", price: 21000, desc: "Traditional Vietnamese phin drip with condensed milk.", image: "/vietnam-drip.jpg", bestSelling: true },
   { id: 9, name: "Coffee Drip Bag Pack", category: "Merchandise", price: 80000, desc: "Convenient single-serve drip bags. Pack of 10.", image: "/drip-bag.jpg", bestSelling: true },
 ]
 
