@@ -10,7 +10,7 @@ export const CartModal = () => {
     // Membuat daftar item dengan format list/bullet point
     const itemsList = items.map((item) => `• ${item.quantity}x ${item.name} (${item.price})`).join("\n")
 
-    const message = `Halo Admin, saya ingin memesan:\n\n${itemsList}\n\n*Total Harga: $${totalPrice}*\n\nTerima Kasih.`
+    const message = `Halo Admin, saya ingin memesan:\n\n${itemsList}\n\n*Total Harga: Rp.${totalPrice}*\n\nTerima Kasih.`
 
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
   }
