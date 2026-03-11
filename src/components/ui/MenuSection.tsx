@@ -60,7 +60,7 @@ const MenuSection = () => {
               <p className="text-sm text-coffee-dark/60 mt-1 mb-4 grow">{product.desc}</p>
 
               <div className="flex items-center justify-between mt-auto">
-                <span className="font-bold text-coffee-dark">${product.price}</span>
+                <span className="font-bold text-coffee-dark">Rp.{product.price}</span>
                 <button
                   onClick={() => {
                     addToCart({ id: product.id, name: product.name, price: product.price, image: product.image })
